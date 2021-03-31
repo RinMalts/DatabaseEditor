@@ -32,7 +32,6 @@ namespace App1._2
             this.components = new System.ComponentModel.Container();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,7 +51,7 @@ namespace App1._2
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(465, 3);
+            this.buttonDelete.Location = new System.Drawing.Point(383, 0);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(177, 40);
@@ -67,7 +66,7 @@ namespace App1._2
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(95, 3);
+            this.buttonAdd.Location = new System.Drawing.Point(13, 0);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(177, 39);
@@ -76,28 +75,13 @@ namespace App1._2
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRefresh.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefresh.ForeColor = System.Drawing.Color.White;
-            this.buttonRefresh.Location = new System.Drawing.Point(650, 3);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(177, 38);
-            this.buttonRefresh.TabIndex = 13;
-            this.buttonRefresh.Text = "Обновить данные";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            // 
             // buttonChange
             // 
             this.buttonChange.FlatAppearance.BorderSize = 0;
             this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChange.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonChange.ForeColor = System.Drawing.Color.White;
-            this.buttonChange.Location = new System.Drawing.Point(280, 3);
+            this.buttonChange.Location = new System.Drawing.Point(198, 0);
             this.buttonChange.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(177, 40);
@@ -111,11 +95,10 @@ namespace App1._2
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.buttonDelete);
             this.panel2.Controls.Add(this.buttonAdd);
-            this.panel2.Controls.Add(this.buttonRefresh);
             this.panel2.Controls.Add(this.buttonChange);
             this.panel2.Location = new System.Drawing.Point(-6, 554);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 80);
+            this.panel2.Size = new System.Drawing.Size(572, 80);
             this.panel2.TabIndex = 10;
             // 
             // dataGridView1
@@ -125,7 +108,7 @@ namespace App1._2
             this.dataGridView1.Location = new System.Drawing.Point(6, 64);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(914, 485);
+            this.dataGridView1.Size = new System.Drawing.Size(548, 485);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -153,7 +136,7 @@ namespace App1._2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 598);
+            this.ClientSize = new System.Drawing.Size(558, 598);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
@@ -175,7 +158,6 @@ namespace App1._2
 
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
