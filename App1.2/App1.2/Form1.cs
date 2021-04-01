@@ -37,15 +37,9 @@ namespace App1._2
 
         }
 
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+          
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -53,17 +47,10 @@ namespace App1._2
             myConnection.Close();
         }
 
-        private void Update_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Сотрудники SET";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            command.ExecuteNonQueryAsync(); // added ..Async
-
+            MessageBox.Show("База данных обновлена.");
+            this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);
         }
     }
 }

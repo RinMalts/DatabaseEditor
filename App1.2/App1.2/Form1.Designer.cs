@@ -40,11 +40,6 @@ namespace App1._2
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.кодСотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firmBDDataSet = new App1._2.FirmBDDataSet();
             this.sTOREBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,14 +51,19 @@ namespace App1._2
             this.сотрудникиTableAdapter = new App1._2.FirmBDDataSetTableAdapters.СотрудникиTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодСотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOREBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDelete
@@ -180,48 +180,6 @@ namespace App1._2
             this.buttonChange.Text = "Изменить";
             this.buttonChange.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.кодСотрудникаDataGridViewTextBoxColumn,
-            this.имяDataGridViewTextBoxColumn,
-            this.фамилияDataGridViewTextBoxColumn,
-            this.должностьDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.сотрудникиBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 64);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(548, 485);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // кодСотрудникаDataGridViewTextBoxColumn
-            // 
-            this.кодСотрудникаDataGridViewTextBoxColumn.DataPropertyName = "Код сотрудника";
-            this.кодСотрудникаDataGridViewTextBoxColumn.HeaderText = "Код сотрудника";
-            this.кодСотрудникаDataGridViewTextBoxColumn.Name = "кодСотрудникаDataGridViewTextBoxColumn";
-            // 
-            // имяDataGridViewTextBoxColumn
-            // 
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
-            // 
-            // фамилияDataGridViewTextBoxColumn
-            // 
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
-            // 
-            // должностьDataGridViewTextBoxColumn
-            // 
-            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
-            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
-            // 
             // сотрудникиBindingSource
             // 
             this.сотрудникиBindingSource.DataMember = "Сотрудники";
@@ -290,6 +248,47 @@ namespace App1._2
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодСотрудникаDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
+            this.фамилияDataGridViewTextBoxColumn,
+            this.должностьDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.сотрудникиBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 63);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(548, 486);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // кодСотрудникаDataGridViewTextBoxColumn
+            // 
+            this.кодСотрудникаDataGridViewTextBoxColumn.DataPropertyName = "Код сотрудника";
+            this.кодСотрудникаDataGridViewTextBoxColumn.HeaderText = "Код сотрудника";
+            this.кодСотрудникаDataGridViewTextBoxColumn.Name = "кодСотрудникаDataGridViewTextBoxColumn";
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            // 
+            // фамилияDataGridViewTextBoxColumn
+            // 
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            // 
+            // должностьDataGridViewTextBoxColumn
+            // 
+            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
+            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,13 +307,13 @@ namespace App1._2
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOREBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,7 +323,6 @@ namespace App1._2
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private MyBDDataSet myBDDataSet;
         private System.Windows.Forms.BindingSource sTOREBindingSource;
         private MyBDDataSetTableAdapters.STORETableAdapter sTORETableAdapter;
@@ -334,10 +332,6 @@ namespace App1._2
         private FirmBDDataSetTableAdapters.ЗаказыTableAdapter заказыTableAdapter;
         private System.Windows.Forms.BindingSource сотрудникиBindingSource;
         private FirmBDDataSetTableAdapters.СотрудникиTableAdapter сотрудникиTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодСотрудникаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -347,6 +341,11 @@ namespace App1._2
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодСотрудникаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
     }
 }
 
