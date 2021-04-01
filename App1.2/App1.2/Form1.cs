@@ -39,7 +39,11 @@ namespace App1._2
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-          
+            int kod = Convert.ToInt32(textBox1.Text);
+            string query = "DELETE FROM Сотрудники WHERE [Код сотрудника] =" + kod;
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Данные о сотруднике удалены");
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
