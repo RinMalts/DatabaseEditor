@@ -37,10 +37,6 @@ namespace App1._2
 
         }
 
-        private void buttonChange_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -55,6 +51,19 @@ namespace App1._2
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConnection.Close();
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE Сотрудники SET";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            command.ExecuteNonQueryAsync(); // added ..Async
+
         }
     }
 }
