@@ -52,10 +52,9 @@ namespace App1._2
 
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             myConnection.Close();
         }
     }
 }
- 

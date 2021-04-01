@@ -11,3 +11,5 @@ D:\2021.03\Project\App1.2\App1.2\obj\Debug\App1.2.csprojAssemblyReference.cache
 D:\2021.03\Project\App1.2\App1.2\obj\Debug\App1.2.csproj.CopyComplete
 D:\2021.03\Project\App1.2\App1.2\obj\Debug\App1.2.exe
 D:\2021.03\Project\App1.2\App1.2\obj\Debug\App1.2.pdb
+D:\2021.03\Project\App1.2\App1.2\bin\Debug\FirmBD.mdb
+D:\2021.03\Project\App1.2\App1.2\obj\Debug\App1._2.Form2.resources

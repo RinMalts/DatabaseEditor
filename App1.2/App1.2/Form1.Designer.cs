@@ -35,26 +35,26 @@ namespace App1._2
             this.buttonChange = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sTOREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.myBDDataSet = new App1._2.MyBDDataSet();
-            this.sTORETableAdapter = new App1._2.MyBDDataSetTableAdapters.STORETableAdapter();
-            this.tableAdapterManager = new App1._2.MyBDDataSetTableAdapters.TableAdapterManager();
-            this.firmBDDataSet = new App1._2.FirmBDDataSet();
-            this.заказыBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.заказыTableAdapter = new App1._2.FirmBDDataSetTableAdapters.ЗаказыTableAdapter();
-            this.сотрудникиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.сотрудникиTableAdapter = new App1._2.FirmBDDataSetTableAdapters.СотрудникиTableAdapter();
             this.кодСотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.firmBDDataSet = new App1._2.FirmBDDataSet();
+            this.sTOREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myBDDataSet = new App1._2.MyBDDataSet();
+            this.sTORETableAdapter = new App1._2.MyBDDataSetTableAdapters.STORETableAdapter();
+            this.tableAdapterManager = new App1._2.MyBDDataSetTableAdapters.TableAdapterManager();
+            this.заказыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.заказыTableAdapter = new App1._2.FirmBDDataSetTableAdapters.ЗаказыTableAdapter();
+            this.сотрудникиTableAdapter = new App1._2.FirmBDDataSetTableAdapters.СотрудникиTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOREBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDelete
@@ -131,49 +131,6 @@ namespace App1._2
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // sTOREBindingSource
-            // 
-            this.sTOREBindingSource.DataMember = "STORE";
-            this.sTOREBindingSource.DataSource = this.myBDDataSet;
-            // 
-            // myBDDataSet
-            // 
-            this.myBDDataSet.DataSetName = "MyBDDataSet";
-            this.myBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTORETableAdapter
-            // 
-            this.sTORETableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.STORETableAdapter = this.sTORETableAdapter;
-            this.tableAdapterManager.UpdateOrder = App1._2.MyBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // firmBDDataSet
-            // 
-            this.firmBDDataSet.DataSetName = "FirmBDDataSet";
-            this.firmBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // заказыBindingSource
-            // 
-            this.заказыBindingSource.DataMember = "Заказы";
-            this.заказыBindingSource.DataSource = this.firmBDDataSet;
-            // 
-            // заказыTableAdapter
-            // 
-            this.заказыTableAdapter.ClearBeforeFill = true;
-            // 
-            // сотрудникиBindingSource
-            // 
-            this.сотрудникиBindingSource.DataMember = "Сотрудники";
-            this.сотрудникиBindingSource.DataSource = this.firmBDDataSet;
-            // 
-            // сотрудникиTableAdapter
-            // 
-            this.сотрудникиTableAdapter.ClearBeforeFill = true;
-            // 
             // кодСотрудникаDataGridViewTextBoxColumn
             // 
             this.кодСотрудникаDataGridViewTextBoxColumn.DataPropertyName = "Код сотрудника";
@@ -198,6 +155,49 @@ namespace App1._2
             this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
             this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
             // 
+            // сотрудникиBindingSource
+            // 
+            this.сотрудникиBindingSource.DataMember = "Сотрудники";
+            this.сотрудникиBindingSource.DataSource = this.firmBDDataSet;
+            // 
+            // firmBDDataSet
+            // 
+            this.firmBDDataSet.DataSetName = "FirmBDDataSet";
+            this.firmBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTOREBindingSource
+            // 
+            this.sTOREBindingSource.DataMember = "STORE";
+            this.sTOREBindingSource.DataSource = this.myBDDataSet;
+            // 
+            // myBDDataSet
+            // 
+            this.myBDDataSet.DataSetName = "MyBDDataSet";
+            this.myBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTORETableAdapter
+            // 
+            this.sTORETableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.STORETableAdapter = this.sTORETableAdapter;
+            this.tableAdapterManager.UpdateOrder = App1._2.MyBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // заказыBindingSource
+            // 
+            this.заказыBindingSource.DataMember = "Заказы";
+            this.заказыBindingSource.DataSource = this.firmBDDataSet;
+            // 
+            // заказыTableAdapter
+            // 
+            this.заказыTableAdapter.ClearBeforeFill = true;
+            // 
+            // сотрудникиTableAdapter
+            // 
+            this.сотрудникиTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,15 +211,15 @@ namespace App1._2
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Text = "Database Editor";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOREBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
