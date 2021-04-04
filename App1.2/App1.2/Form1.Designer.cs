@@ -38,7 +38,6 @@ namespace App1._2
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
             this.сотрудникиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firmBDDataSet = new App1._2.FirmBDDataSet();
@@ -56,6 +55,7 @@ namespace App1._2
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmBDDataSet)).BeginInit();
@@ -158,13 +158,6 @@ namespace App1._2
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(140, 20);
             this.textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(189, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 18;
             // 
             // buttonChange
             // 
@@ -290,6 +283,13 @@ namespace App1._2
             this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
             this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(189, 102);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(140, 20);
+            this.textBox2.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +338,6 @@ namespace App1._2
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonUpdate;
@@ -347,6 +346,7 @@ namespace App1._2
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
