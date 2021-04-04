@@ -179,6 +179,7 @@ namespace App1._2
             this.buttonChange.TabIndex = 17;
             this.buttonChange.Text = "Изменить";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // сотрудникиBindingSource
             // 

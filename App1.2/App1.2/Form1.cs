@@ -53,8 +53,17 @@ namespace App1._2
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("База данных обновлена.");
             this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);
+            MessageBox.Show("База данных обновлена.");            
+        }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            int kod = Convert.ToInt32(textBox3.Text);
+            string query = "UPDATE Сотрудники SET Должность = '" + textBox2.Text + "' WHERE [Код сотрудника] = " + kod;
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Должность изменена");
         }
     }
 }
