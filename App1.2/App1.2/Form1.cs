@@ -34,7 +34,14 @@ namespace App1._2
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            int kod = Convert.ToInt32(textBox6.Text);
+            string name = textBox5.Text;
+            string surname = textBox7.Text;
+            string position = textBox4.Text;
+            string query = "INSERT INTO Сотрудники ([Код сотрудника], Имя, Фамилия, Должность) VALUES (" + kod + " , '" + name + "' , '" + surname + "' , '" + position + "')";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Данные о сотруднике добавлены.");
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
