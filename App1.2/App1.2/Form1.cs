@@ -13,7 +13,7 @@ using MetroFramework.Forms;
 
 namespace App1._2
 {
-    public partial class Form1 : MetroForm
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {   
         //database connection
         public static string connectString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source = FirmBD.mdb"; 
@@ -34,29 +34,54 @@ namespace App1._2
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            int kod = Convert.ToInt32(textBox1.Text);
-            string name = textBox2.Text;
-            string surname = textBox3.Text;
-            string position = textBox4.Text;
+            if (!int.TryParse(textKodAdd.Text, out int kod))
+            {
+                MessageBox.Show("Введите код");
+                return;
+            }
+            string name = textNameAdd.Text;
+            string surname = textSurnameAdd.Text;
+            string position = textPositionAdd.Text;
             string query = "INSERT INTO Сотрудники ([Код сотрудника], Имя, Фамилия, Должность) VALUES (" + kod + " , '" + name + "' , '" + surname + "' , '" + position + "')";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные о сотруднике добавлены.");
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+            textKodAdd.Clear();
+            textNameAdd.Clear();
+            textSurnameAdd.Clear();
+            textPositionAdd.Clear();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            int kod = Convert.ToInt32(textBox7.Text);
+            if (!int.TryParse(textKodDelete.Text, out int kod))
+            {
+                MessageBox.Show("Введите код");
+                return;
+            }
             string query = "DELETE FROM Сотрудники WHERE [Код сотрудника] =" + kod;
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные о сотруднике удалены");
-            textBox7.Clear();
+            textKodDelete.Clear();
         }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(textKodChange.Text, out int kod))
+            {
+                MessageBox.Show("Введите код");
+                return;
+            }
+            string query = "UPDATE Сотрудники SET Должность = '" + textPositionChange.Text + "' WHERE [Код сотрудника] = " + kod;
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Должность изменена");
+            textKodChange.Clear();
+            textPositionChange.Clear();
+        }
+
+       
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -67,23 +92,15 @@ namespace App1._2
         {
             this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);     
         }
-
-        private void buttonChange_Click(object sender, EventArgs e)
-        {
-            int kod = Convert.ToInt32(textBox5.Text);
-            string query = "UPDATE Сотрудники SET Должность = '" + textBox6.Text + "' WHERE [Код сотрудника] = " + kod;
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Должность изменена");
-            textBox6.Clear();
-            textBox6.Clear();
-        }
-
         private void buttonPosition_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.Owner = this;
-            f2.Show(null);
+            f2.Show();
+        }
+        private void buttonEmployee_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
         }
     }
 }

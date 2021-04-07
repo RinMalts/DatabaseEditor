@@ -12,14 +12,14 @@ using MetroFramework.Forms;
 
 namespace App1._2
 {
-    public partial class Form2 : MetroForm
+    public partial class Form3 : MetroForm
     {
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
 
         }

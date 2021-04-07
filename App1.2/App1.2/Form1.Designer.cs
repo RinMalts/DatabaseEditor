@@ -35,9 +35,9 @@ namespace App1._2
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textKodChange = new System.Windows.Forms.TextBox();
+            this.textKodDelete = new System.Windows.Forms.TextBox();
+            this.textPositionChange = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
             this.сотрудникиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firmBDDataSet = new App1._2.FirmBDDataSet();
@@ -53,13 +53,13 @@ namespace App1._2
             this.buttonPosition = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textPositionAdd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textNameAdd = new System.Windows.Forms.TextBox();
+            this.textSurnameAdd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textKodAdd = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.кодСотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,26 +137,26 @@ namespace App1._2
             this.label1.TabIndex = 20;
             this.label1.Text = "Код сотрудника";
             // 
-            // textBox5
+            // textKodChange
             // 
-            this.textBox5.Location = new System.Drawing.Point(188, 363);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(140, 20);
-            this.textBox5.TabIndex = 19;
+            this.textKodChange.Location = new System.Drawing.Point(188, 363);
+            this.textKodChange.Name = "textKodChange";
+            this.textKodChange.Size = new System.Drawing.Size(140, 20);
+            this.textKodChange.TabIndex = 19;
             // 
-            // textBox7
+            // textKodDelete
             // 
-            this.textBox7.Location = new System.Drawing.Point(188, 499);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 20);
-            this.textBox7.TabIndex = 16;
+            this.textKodDelete.Location = new System.Drawing.Point(188, 499);
+            this.textKodDelete.Name = "textKodDelete";
+            this.textKodDelete.Size = new System.Drawing.Size(140, 20);
+            this.textKodDelete.TabIndex = 16;
             // 
-            // textBox6
+            // textPositionChange
             // 
-            this.textBox6.Location = new System.Drawing.Point(188, 425);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 20);
-            this.textBox6.TabIndex = 18;
+            this.textPositionChange.Location = new System.Drawing.Point(188, 425);
+            this.textPositionChange.Name = "textPositionChange";
+            this.textPositionChange.Size = new System.Drawing.Size(140, 20);
+            this.textPositionChange.TabIndex = 18;
             // 
             // buttonChange
             // 
@@ -223,31 +223,32 @@ namespace App1._2
             this.panel1.Controls.Add(this.buttonPosition);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textKodDelete);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Controls.Add(this.buttonUpdate);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textPositionAdd);
+            this.panel1.Controls.Add(this.textKodChange);
             this.panel1.Controls.Add(this.buttonAdd);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textPositionChange);
             this.panel1.Controls.Add(this.buttonChange);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textNameAdd);
+            this.panel1.Controls.Add(this.textSurnameAdd);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textKodAdd);
             this.panel1.Location = new System.Drawing.Point(561, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 619);
+            this.panel1.Size = new System.Drawing.Size(340, 663);
             this.panel1.TabIndex = 15;
             // 
             // buttonEmployee
             // 
+            this.buttonEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.buttonEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.buttonEmployee.FlatAppearance.BorderSize = 3;
+            this.buttonEmployee.FlatAppearance.BorderSize = 2;
             this.buttonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEmployee.ForeColor = System.Drawing.Color.White;
@@ -257,12 +258,14 @@ namespace App1._2
             this.buttonEmployee.Size = new System.Drawing.Size(312, 41);
             this.buttonEmployee.TabIndex = 39;
             this.buttonEmployee.Text = "Поиск по сотруднику";
-            this.buttonEmployee.UseVisualStyleBackColor = true;
+            this.buttonEmployee.UseVisualStyleBackColor = false;
+            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
             // 
             // buttonPosition
             // 
+            this.buttonPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.buttonPosition.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.buttonPosition.FlatAppearance.BorderSize = 3;
+            this.buttonPosition.FlatAppearance.BorderSize = 2;
             this.buttonPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPosition.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPosition.ForeColor = System.Drawing.Color.White;
@@ -272,7 +275,7 @@ namespace App1._2
             this.buttonPosition.Size = new System.Drawing.Size(312, 41);
             this.buttonPosition.TabIndex = 38;
             this.buttonPosition.Text = "Поиск по должности";
-            this.buttonPosition.UseVisualStyleBackColor = true;
+            this.buttonPosition.UseVisualStyleBackColor = false;
             this.buttonPosition.Click += new System.EventHandler(this.buttonPosition_Click);
             // 
             // label4
@@ -288,25 +291,27 @@ namespace App1._2
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonUpdate.BackColor = System.Drawing.Color.Gray;
+            this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonUpdate.FlatAppearance.BorderSize = 3;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.Location = new System.Drawing.Point(15, 536);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(312, 67);
+            this.buttonUpdate.Size = new System.Drawing.Size(312, 111);
             this.buttonUpdate.TabIndex = 16;
-            this.buttonUpdate.Text = "Обновить";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Text = "Обновить базу данных";
+            this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // textBox4
+            // textPositionAdd
             // 
-            this.textBox4.Location = new System.Drawing.Point(188, 233);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 36;
+            this.textPositionAdd.Location = new System.Drawing.Point(188, 233);
+            this.textPositionAdd.Name = "textPositionAdd";
+            this.textPositionAdd.Size = new System.Drawing.Size(140, 20);
+            this.textPositionAdd.TabIndex = 36;
             // 
             // label5
             // 
@@ -319,19 +324,19 @@ namespace App1._2
             this.label5.TabIndex = 35;
             this.label5.Text = "Фамилия";
             // 
-            // textBox2
+            // textNameAdd
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 34;
+            this.textNameAdd.Location = new System.Drawing.Point(188, 154);
+            this.textNameAdd.Name = "textNameAdd";
+            this.textNameAdd.Size = new System.Drawing.Size(140, 20);
+            this.textNameAdd.TabIndex = 34;
             // 
-            // textBox3
+            // textSurnameAdd
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 233);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 30;
+            this.textSurnameAdd.Location = new System.Drawing.Point(15, 233);
+            this.textSurnameAdd.Name = "textSurnameAdd";
+            this.textSurnameAdd.Size = new System.Drawing.Size(140, 20);
+            this.textSurnameAdd.TabIndex = 30;
             // 
             // label7
             // 
@@ -355,12 +360,12 @@ namespace App1._2
             this.label6.TabIndex = 33;
             this.label6.Text = "Имя";
             // 
-            // textBox1
+            // textKodAdd
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 32;
+            this.textKodAdd.Location = new System.Drawing.Point(15, 154);
+            this.textKodAdd.Name = "textKodAdd";
+            this.textKodAdd.Size = new System.Drawing.Size(140, 20);
+            this.textKodAdd.TabIndex = 32;
             // 
             // dataGridView1
             // 
@@ -376,7 +381,7 @@ namespace App1._2
             this.dataGridView1.Location = new System.Drawing.Point(6, 63);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(548, 619);
+            this.dataGridView1.Size = new System.Drawing.Size(548, 663);
             this.dataGridView1.TabIndex = 16;
             // 
             // кодСотрудникаDataGridViewTextBoxColumn
@@ -407,7 +412,7 @@ namespace App1._2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 690);
+            this.ClientSize = new System.Drawing.Size(911, 734);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -446,8 +451,8 @@ namespace App1._2
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textKodChange;
+        private System.Windows.Forms.TextBox textKodDelete;
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonUpdate;
@@ -456,15 +461,15 @@ namespace App1._2
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textPositionChange;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textPositionAdd;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textNameAdd;
+        private System.Windows.Forms.TextBox textSurnameAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textKodAdd;
         private System.Windows.Forms.Button buttonEmployee;
         private System.Windows.Forms.Button buttonPosition;
     }
