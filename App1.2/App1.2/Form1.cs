@@ -34,23 +34,28 @@ namespace App1._2
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            int kod = Convert.ToInt32(textBox6.Text);
-            string name = textBox5.Text;
-            string surname = textBox7.Text;
+            int kod = Convert.ToInt32(textBox1.Text);
+            string name = textBox2.Text;
+            string surname = textBox3.Text;
             string position = textBox4.Text;
             string query = "INSERT INTO Сотрудники ([Код сотрудника], Имя, Фамилия, Должность) VALUES (" + kod + " , '" + name + "' , '" + surname + "' , '" + position + "')";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные о сотруднике добавлены.");
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            int kod = Convert.ToInt32(textBox1.Text);
+            int kod = Convert.ToInt32(textBox7.Text);
             string query = "DELETE FROM Сотрудники WHERE [Код сотрудника] =" + kod;
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные о сотруднике удалены");
+            textBox7.Clear();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,17 +65,25 @@ namespace App1._2
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);
-            MessageBox.Show("База данных обновлена.");            
+            this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);     
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            int kod = Convert.ToInt32(textBox3.Text);
-            string query = "UPDATE Сотрудники SET Должность = '" + textBox2.Text + "' WHERE [Код сотрудника] = " + kod;
+            int kod = Convert.ToInt32(textBox5.Text);
+            string query = "UPDATE Сотрудники SET Должность = '" + textBox6.Text + "' WHERE [Код сотрудника] = " + kod;
             OleDbCommand command = new OleDbCommand(query, myConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Должность изменена");
+            textBox6.Clear();
+            textBox6.Clear();
+        }
+
+        private void buttonPosition_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Owner = this;
+            f2.Show(null);
         }
     }
 }
