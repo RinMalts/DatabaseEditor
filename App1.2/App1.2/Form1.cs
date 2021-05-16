@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,26 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Components;
 using MetroFramework.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace App1._2
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {   
         //database connection
-        public static string connectString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source = FirmBD.mdb"; 
-        private OleDbConnection myConnection;
+        private SqlConnection sqlConnection = null;
 
         public Form1()
         {
             InitializeComponent();
-            myConnection = new OleDbConnection(connectString);
-            myConnection.Open();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'firmBDDataSet.Сотрудники' table. You can move, or remove it, as needed.
-            this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);
+            // TODO: This line of code loads data into the 'myBDDataSet1.Сотрудники' table. You can move, or remove it, as needed.
+            this.сотрудникиTableAdapter1.Fill(this.myBDDataSet1.Сотрудники);
+
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["App1.2"].ConnectionString);
+
+            sqlConnection.Open();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            sqlConnection.Close();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -43,7 +50,7 @@ namespace App1._2
             string surname = textSurnameAdd.Text;
             string position = textPositionAdd.Text;
             string query = "INSERT INTO Сотрудники ([Код сотрудника], Имя, Фамилия, Должность) VALUES (" + kod + " , '" + name + "' , '" + surname + "' , '" + position + "')";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
+            SqlCommand command = new SqlCommand(query, sqlConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные о сотруднике добавлены.");
             textKodAdd.Clear();
@@ -60,7 +67,7 @@ namespace App1._2
                 return;
             }
             string query = "DELETE FROM Сотрудники WHERE [Код сотрудника] =" + kod;
-            OleDbCommand command = new OleDbCommand(query, myConnection);
+            SqlCommand command = new SqlCommand(query, sqlConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Данные о сотруднике удалены");
             textKodDelete.Clear();
@@ -74,33 +81,26 @@ namespace App1._2
                 return;
             }
             string query = "UPDATE Сотрудники SET Должность = '" + textPositionChange.Text + "' WHERE [Код сотрудника] = " + kod;
-            OleDbCommand command = new OleDbCommand(query, myConnection);
+            SqlCommand command = new SqlCommand(query, sqlConnection);
             command.ExecuteNonQuery();
             MessageBox.Show("Должность изменена");
             textKodChange.Clear();
             textPositionChange.Clear();
         }
 
-       
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            myConnection.Close();
-        }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            this.сотрудникиTableAdapter.Fill(this.firmBDDataSet.Сотрудники);     
+            this.сотрудникиTableAdapter1.Fill(this.myBDDataSet1.Сотрудники);
         }
-        private void buttonPosition_Click(object sender, EventArgs e)
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
+
         }
-        private void buttonEmployee_Click(object sender, EventArgs e)
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Form3 f3 = new Form3();
-            f3.Show();
+
         }
     }
 }

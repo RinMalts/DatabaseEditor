@@ -27,5 +27,3 @@ D:\2021.03\Project\DatabaseEditor\App1.2\App1.2\obj\Debug\App1.2.csproj.CoreComp
 D:\2021.03\Project\DatabaseEditor\App1.2\App1.2\obj\Debug\App1.2.csproj.CopyComplete
 D:\2021.03\Project\DatabaseEditor\App1.2\App1.2\obj\Debug\App1.2.exe
 D:\2021.03\Project\DatabaseEditor\App1.2\App1.2\obj\Debug\App1.2.pdb
-D:\2021.03\Project\DatabaseEditor\App1.2\App1.2\obj\Debug\App1._2.Form2.resources
-D:\2021.03\Project\DatabaseEditor\App1.2\App1.2\obj\Debug\App1._2.Form3.resources

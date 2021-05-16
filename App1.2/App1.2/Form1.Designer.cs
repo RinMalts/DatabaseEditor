@@ -49,8 +49,6 @@ namespace App1._2
             this.заказыTableAdapter = new App1._2.FirmBDDataSetTableAdapters.ЗаказыTableAdapter();
             this.сотрудникиTableAdapter = new App1._2.FirmBDDataSetTableAdapters.СотрудникиTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonEmployee = new System.Windows.Forms.Button();
-            this.buttonPosition = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.textPositionAdd = new System.Windows.Forms.TextBox();
@@ -61,6 +59,14 @@ namespace App1._2
             this.label6 = new System.Windows.Forms.Label();
             this.textKodAdd = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.myBDDataSet1 = new App1._2.MyBDDataSet1();
+            this.заказыBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.заказыTableAdapter1 = new App1._2.MyBDDataSet1TableAdapters.ЗаказыTableAdapter();
+            this.myBDDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.клиентыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.клиентыTableAdapter = new App1._2.MyBDDataSet1TableAdapters.КлиентыTableAdapter();
+            this.сотрудникиBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.сотрудникиTableAdapter1 = new App1._2.MyBDDataSet1TableAdapters.СотрудникиTableAdapter();
             this.кодСотрудникаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +78,11 @@ namespace App1._2
             ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.клиентыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDelete
@@ -80,7 +91,7 @@ namespace App1._2
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(29, 479);
+            this.buttonDelete.Location = new System.Drawing.Point(28, 350);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(140, 40);
@@ -95,7 +106,7 @@ namespace App1._2
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(16, 273);
+            this.buttonAdd.Location = new System.Drawing.Point(15, 144);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(312, 53);
@@ -109,7 +120,7 @@ namespace App1._2
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(185, 479);
+            this.label3.Location = new System.Drawing.Point(184, 350);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 17);
             this.label3.TabIndex = 22;
@@ -120,7 +131,7 @@ namespace App1._2
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(185, 407);
+            this.label2.Location = new System.Drawing.Point(184, 278);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 21;
@@ -131,7 +142,7 @@ namespace App1._2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(185, 343);
+            this.label1.Location = new System.Drawing.Point(184, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 17);
             this.label1.TabIndex = 20;
@@ -139,21 +150,21 @@ namespace App1._2
             // 
             // textKodChange
             // 
-            this.textKodChange.Location = new System.Drawing.Point(188, 363);
+            this.textKodChange.Location = new System.Drawing.Point(187, 234);
             this.textKodChange.Name = "textKodChange";
             this.textKodChange.Size = new System.Drawing.Size(140, 20);
             this.textKodChange.TabIndex = 19;
             // 
             // textKodDelete
             // 
-            this.textKodDelete.Location = new System.Drawing.Point(188, 499);
+            this.textKodDelete.Location = new System.Drawing.Point(187, 370);
             this.textKodDelete.Name = "textKodDelete";
             this.textKodDelete.Size = new System.Drawing.Size(140, 20);
             this.textKodDelete.TabIndex = 16;
             // 
             // textPositionChange
             // 
-            this.textPositionChange.Location = new System.Drawing.Point(188, 425);
+            this.textPositionChange.Location = new System.Drawing.Point(187, 296);
             this.textPositionChange.Name = "textPositionChange";
             this.textPositionChange.Size = new System.Drawing.Size(140, 20);
             this.textPositionChange.TabIndex = 18;
@@ -164,7 +175,7 @@ namespace App1._2
             this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChange.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonChange.ForeColor = System.Drawing.Color.White;
-            this.buttonChange.Location = new System.Drawing.Point(29, 384);
+            this.buttonChange.Location = new System.Drawing.Point(28, 255);
             this.buttonChange.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(140, 40);
@@ -219,8 +230,6 @@ namespace App1._2
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.buttonEmployee);
-            this.panel1.Controls.Add(this.buttonPosition);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textKodDelete);
@@ -241,49 +250,16 @@ namespace App1._2
             this.panel1.Controls.Add(this.textKodAdd);
             this.panel1.Location = new System.Drawing.Point(561, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 663);
+            this.panel1.Size = new System.Drawing.Size(340, 532);
             this.panel1.TabIndex = 15;
-            // 
-            // buttonEmployee
-            // 
-            this.buttonEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.buttonEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.buttonEmployee.FlatAppearance.BorderSize = 2;
-            this.buttonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEmployee.ForeColor = System.Drawing.Color.White;
-            this.buttonEmployee.Location = new System.Drawing.Point(14, 74);
-            this.buttonEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonEmployee.Name = "buttonEmployee";
-            this.buttonEmployee.Size = new System.Drawing.Size(312, 41);
-            this.buttonEmployee.TabIndex = 39;
-            this.buttonEmployee.Text = "Поиск по сотруднику";
-            this.buttonEmployee.UseVisualStyleBackColor = false;
-            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
-            // 
-            // buttonPosition
-            // 
-            this.buttonPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.buttonPosition.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.buttonPosition.FlatAppearance.BorderSize = 2;
-            this.buttonPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPosition.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPosition.ForeColor = System.Drawing.Color.White;
-            this.buttonPosition.Location = new System.Drawing.Point(14, 13);
-            this.buttonPosition.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonPosition.Name = "buttonPosition";
-            this.buttonPosition.Size = new System.Drawing.Size(312, 41);
-            this.buttonPosition.TabIndex = 38;
-            this.buttonPosition.Text = "Поиск по должности";
-            this.buttonPosition.UseVisualStyleBackColor = false;
-            this.buttonPosition.Click += new System.EventHandler(this.buttonPosition_Click);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(185, 213);
+            this.label4.Location = new System.Drawing.Point(184, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 37;
@@ -297,7 +273,7 @@ namespace App1._2
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(15, 536);
+            this.buttonUpdate.Location = new System.Drawing.Point(14, 407);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(312, 111);
@@ -308,7 +284,7 @@ namespace App1._2
             // 
             // textPositionAdd
             // 
-            this.textPositionAdd.Location = new System.Drawing.Point(188, 233);
+            this.textPositionAdd.Location = new System.Drawing.Point(187, 104);
             this.textPositionAdd.Name = "textPositionAdd";
             this.textPositionAdd.Size = new System.Drawing.Size(140, 20);
             this.textPositionAdd.TabIndex = 36;
@@ -318,7 +294,7 @@ namespace App1._2
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 213);
+            this.label5.Location = new System.Drawing.Point(11, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 35;
@@ -326,14 +302,14 @@ namespace App1._2
             // 
             // textNameAdd
             // 
-            this.textNameAdd.Location = new System.Drawing.Point(188, 154);
+            this.textNameAdd.Location = new System.Drawing.Point(187, 25);
             this.textNameAdd.Name = "textNameAdd";
             this.textNameAdd.Size = new System.Drawing.Size(140, 20);
             this.textNameAdd.TabIndex = 34;
             // 
             // textSurnameAdd
             // 
-            this.textSurnameAdd.Location = new System.Drawing.Point(15, 233);
+            this.textSurnameAdd.Location = new System.Drawing.Point(14, 104);
             this.textSurnameAdd.Name = "textSurnameAdd";
             this.textSurnameAdd.Size = new System.Drawing.Size(140, 20);
             this.textSurnameAdd.TabIndex = 30;
@@ -343,7 +319,7 @@ namespace App1._2
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(13, 134);
+            this.label7.Location = new System.Drawing.Point(12, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 17);
             this.label7.TabIndex = 31;
@@ -354,7 +330,7 @@ namespace App1._2
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(185, 134);
+            this.label6.Location = new System.Drawing.Point(184, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 17);
             this.label6.TabIndex = 33;
@@ -362,7 +338,7 @@ namespace App1._2
             // 
             // textKodAdd
             // 
-            this.textKodAdd.Location = new System.Drawing.Point(15, 154);
+            this.textKodAdd.Location = new System.Drawing.Point(14, 25);
             this.textKodAdd.Name = "textKodAdd";
             this.textKodAdd.Size = new System.Drawing.Size(140, 20);
             this.textKodAdd.TabIndex = 32;
@@ -377,12 +353,50 @@ namespace App1._2
             this.имяDataGridViewTextBoxColumn,
             this.фамилияDataGridViewTextBoxColumn,
             this.должностьDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.сотрудникиBindingSource;
+            this.dataGridView1.DataSource = this.сотрудникиBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(6, 63);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(548, 663);
+            this.dataGridView1.Size = new System.Drawing.Size(548, 532);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // myBDDataSet1
+            // 
+            this.myBDDataSet1.DataSetName = "MyBDDataSet1";
+            this.myBDDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // заказыBindingSource1
+            // 
+            this.заказыBindingSource1.DataMember = "Заказы";
+            this.заказыBindingSource1.DataSource = this.myBDDataSet1;
+            // 
+            // заказыTableAdapter1
+            // 
+            this.заказыTableAdapter1.ClearBeforeFill = true;
+            // 
+            // myBDDataSet1BindingSource
+            // 
+            this.myBDDataSet1BindingSource.DataSource = this.myBDDataSet1;
+            this.myBDDataSet1BindingSource.Position = 0;
+            // 
+            // клиентыBindingSource
+            // 
+            this.клиентыBindingSource.DataMember = "Клиенты";
+            this.клиентыBindingSource.DataSource = this.myBDDataSet1BindingSource;
+            // 
+            // клиентыTableAdapter
+            // 
+            this.клиентыTableAdapter.ClearBeforeFill = true;
+            // 
+            // сотрудникиBindingSource1
+            // 
+            this.сотрудникиBindingSource1.DataMember = "Сотрудники";
+            this.сотрудникиBindingSource1.DataSource = this.myBDDataSet1BindingSource;
+            // 
+            // сотрудникиTableAdapter1
+            // 
+            this.сотрудникиTableAdapter1.ClearBeforeFill = true;
             // 
             // кодСотрудникаDataGridViewTextBoxColumn
             // 
@@ -412,7 +426,7 @@ namespace App1._2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 734);
+            this.ClientSize = new System.Drawing.Size(911, 603);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -431,6 +445,11 @@ namespace App1._2
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заказыBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myBDDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.клиентыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,10 +476,6 @@ namespace App1._2
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодСотрудникаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textPositionChange;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textPositionAdd;
@@ -470,8 +485,18 @@ namespace App1._2
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textKodAdd;
-        private System.Windows.Forms.Button buttonEmployee;
-        private System.Windows.Forms.Button buttonPosition;
+        private MyBDDataSet1 myBDDataSet1;
+        private System.Windows.Forms.BindingSource заказыBindingSource1;
+        private MyBDDataSet1TableAdapters.ЗаказыTableAdapter заказыTableAdapter1;
+        private System.Windows.Forms.BindingSource myBDDataSet1BindingSource;
+        private System.Windows.Forms.BindingSource клиентыBindingSource;
+        private MyBDDataSet1TableAdapters.КлиентыTableAdapter клиентыTableAdapter;
+        private System.Windows.Forms.BindingSource сотрудникиBindingSource1;
+        private MyBDDataSet1TableAdapters.СотрудникиTableAdapter сотрудникиTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодСотрудникаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
     }
 }
 
